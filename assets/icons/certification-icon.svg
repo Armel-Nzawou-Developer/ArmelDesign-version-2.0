@@ -1,0 +1,10 @@
+<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Medal circle -->
+  <circle cx="12" cy="13" r="4" stroke="#282e40" stroke-width="2"></circle>
+  
+  <!-- Check mark (certification) -->
+  <path d="M10.5 13.2l1.3 1.3 2.7-2.7" stroke="#282e40" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+  
+  <!-- Ribbons -->
+  <path d="M9 3l3 4 3-4" stroke="#282e40" stroke-width="2" stroke-linejoin="round"></path>
+</svg>

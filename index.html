@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ArmelDesign ★ | Web Development</title>
+
+    <link rel="icon" type="image/x-icon" href="./assets/favicon/favicon.ico">
+
+
+    <!-- Global styles (RESET, colors, typography, layout) -->
+    <link rel="stylesheet" href="./css/main.css" />
+
+    <!-- Shared components for (header, nav, buttons and footer) -->
+    <link rel="stylesheet" href="./css/components.css" />
+
+    <style>
+
+html {
+  list-style: none;
+  background: var(--text-color-initial);
+}
+
+/* GRID container ==============*/
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "navbar navbar"
+    "hero hero"
+    "jumbotron jumbotron"
+    "footer footer";
+}
+/* GRID hero ==============*/
+
+.grid-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 5px;
+  min-height: 70vh;
+
+  margin-top: 75px;
+  box-shadow: 1px 0px 2px var(--text-body);
+
+  background-image: url(./assets/images/hero-banner.png);
+  background-size: cover; /* Ensures the image covers the element */
+  background-position: center; /* Keeps the image centered */
+  background-repeat: no-repeat; /* Prevents tiling */
+}
+
+.hero-item {
+  margin-left: 45px;
+  margin-right: 45px;
+}
+.hero-item > h1 {
+  font-size: 45px;
+  font-weight: 700;
+  margin-bottom: 35px;
+  color: var(--text-color-initial);
+  animation: fadeIn 3s ease-in-out;
+}
+.hero-item > p {
+  margin-bottom: 35px;
+  color: var(--text-and-hover-color);
+  font-weight: 600;
+  animation: fadeIn 2s ease-in-out;
+}
+.hero-item > a {
+  margin: 15px 5px;
+  color: var(--text-and-hover-color);
+  font-weight: 600;
+  animation: fadeIn 2s ease-in-out;
+}
+.hero-item button {
+  box-shadow: 3px 0px 6px var(--text-color-initial);
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* FLEXBOX jumbotron  ==============*/
+
+.jumbotron {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 30px 30px;
+  gap: 15px;
+  height: 50vh;
+  margin: 30px 30px;
+}
+
+.jumbotron-item h2,
+h3 {
+  margin-top: 15px;
+  font-weight: 800;
+  color: var(--nav-and-footer-color);
+}
+.jumbotron-item p {
+  margin-top: 15px;
+  font-weight: 600;
+  color: var(--text-body);
+}
+
+.jumbotron-item button {
+  margin-top: 15px;
+}
+
+
+/* ================= CARD REVEAL ================= */
+.card {
+  background: var(--text-color-initial);
+  padding: 35px 25px;
+  border-radius: 15px;
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* MEDIA QUERY ===================*/
+
+@media (max-width: 970px) {
+  .grid-hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-image: url(./assets/images/hero-banner-smaller.png);
+  }
+  .hero-item > h1 {
+    color: var(--secondary-color);
+    font-weight: 700;
+  }
+  .hero-item > p {
+    color: var(--text-color-initial);
+    font-weight: 600;
+  }
+
+  .jumbotron {
+    height: 100vh;
+    margin-bottom: 30px;
+  }
+  .jumbotron-item {
+    flex: 100%;
+  }
+  .jumbotron-item img {
+    width: 100%;
+  }
+}
+    </style>
+  </head>
+
+  <body>
+    <!-- Section grid container -->
+    <div class="grid-container">
+
+      <!-- Section navbar -->
+      <section class=" grid-item navbar" style="grid-area: navbar;">
+        <div class="outter-nav">
+          <div class="outter-nav-item logo">
+            <a href="./index.html"><img src="./assets/images/logo.png" alt="logo"></a>
+          </div>
+        </div>
+
+        <!-- hamburger navigation -->
+        <div class="hamburger">
+           <input id="menu__toggle" type="checkbox" />
+           <label class="menu__btn" for="menu__toggle">
+             <span></span>
+           </label>
+        <div class="inner-nav">
+          <div class="inner-nav-item active-page">
+            <li><a href="index.html">Home</a></li>
+          </div>
+          <div class="inner-nav-item">
+            <li><a href="./public/resume.html">Resume</a></li>
+          </div>
+          <div class="inner-nav-item">
+            <li><a href="./public/portfolio.html">Portfolio</a></li>
+          </div>
+          <div class="inner-nav-item">
+            <li><a href="./public/about.html">About</a></li>
+          </div>
+          <div class="inner-nav-item">
+            <li><a href="./public/pricing.html">Pricing</a></li>
+          </div>
+          <div class="inner-nav-item">
+            <li><a href="./public/contact.html">Contact</a></li>
+          </div>
+          <div class="inner-nav-item btn-tp-1">
+            <a target="_blank" href="https://wa.me/+27748368368?text=Hello%2C%20I%E2%80%99d%20like%20to%20discuss%20a%20website%20for%20my%20business.%0ABusiness%20name%3A%0AWebsite%20type%20%28corporate%2Fecommerce%2Fetc%29%3A%0ABudget%3A%0ATimeline%3A">
+             <button class="btn-flex"><img src="./assets/icons/whatsApp-top-icon.PNG" alt="whatsApp-top-icon"><p>Chat on WhatsApp</p></button></a>
+          </div>
+        </div>
+      </div>
+      </section>
+
+      <!-- Section hero -->
+      <section id="image" class=" grid-item grid-hero" style="grid-area: hero;">
+        <div class="hero-item btn-tp-1">
+          <h1>Hello, <br/>I'm Armel, a Web Developer!</h1>
+          <p>I specialize in delivering beautiful, responsive, <br/> and user-friendly websites tailored to your needs.</p>
+          <a href="./public/portfolio.html"><button>View my work</button></a>
+        </div>
+      </section>
+
+      <!-- Section jumbotron -->
+      <section class="grid-item jumbotron" style="grid-area: jumbotron">
+        <div class="jumbotron-item ">
+            <h2>Need a website?</h2>
+            <h3>Beautiful & Functional Web <br/> Design Solutions</h3>
+           <p>I am a passionate Web Developer building high quality websites,<br/>
+            turning complex problems into simple, beautiful Web Solutions.
+          </p>
+           <div>
+            <a class="btn-tp-1" href="./public/contact.html"><button>Get in touch</button></a>
+            <a class="btn-tp-2" href="./public/pricing.html"><button>View packages</button></a>
+           </div>
+         </div>
+        <div class="jumbotron-item card">
+          <img src="./assets/icons/jumbotron-icon.png" alt="jumbotron-icon">
+        </div>
+      </section>
+
+      <!-- Section footer -->
+      <section class="grid-item footer component-gradient-background" style="grid-area: footer">
+        <div class="footer-list">
+            <ul class="footer-list-item">
+              <li><a class="logo-footer" href="./index.html"> <img src="./assets/images/logo-footer.png" alt="logo-footer"></a></li>
+            </ul>
+          </div>
+        <div class="footer-list">
+            <ul class="footer-list-item">
+              <li><h2>Menu ★</h2></li>
+              <li><a href="./index.html"> Home</a></li>
+              <li><a href="./public/resume.html"> Resume</a></li>
+              <li><a href="./public/portfolio.html"> Portfolio</a></li>
+              <li><a href="./public/pricing.html"> Pricing</a></li>
+              <li><a href="./public/contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-list">
+            <ul class="footer-list-item">
+              <li><h2>Quicks Links ★</h2></li>
+              <li><a href="./public/about.html"> About</a></li>
+              <li><a href="#">Make an appointment</a></li>
+              <li><a href="./public/pricing.html">Hire services</a></li>
+              <li><a href="./terms-and-conditions/Web_Developer_Services_EN.pdf"> Terms & Conditions</a></li>
+          
+            </ul>
+          </div>
+        <div class="footer-list">
+          <ul class="footer-list-item">
+            <li><h2> Get Social ★</h2></li>
+            <li class="footer-icons">
+              <a href="mailto:armel.nzawou.developer@gmail.com"><img src="./assets/icons/email-footer-icon.PNG" alt="email-footer-icon"/></a>
+              <a href="tel:+27748368368 "><img src="./assets/icons/phone-footer-icon.PNG" alt="phone-footer-icon"/></a>
+              <a target="_blank" href="https://www.facebook.com/armel.nzawou/"><img src="./assets/icons/facebook-footer-icon.png" alt="facebook-footer-icon"/></a>
+              <a target="_blank" href="https://www.instagram.com/armel_nzawou/"><img src="./assets/icons/instagram-footer-icon.png" alt="instagram-footer-icon"/></a>
+            </li>
+            <li class="footer-icons"><img src="./assets/icons/calendar-icon.PNG" alt="calendar-icon"/> <p>Mon - Fri , 09:00 – 18:00 (GMT+2) <br/> Sat , 09:00 – 15:00 (GMT+2)</p></li>
+          </ul>
+        </div>
+        <div class="footer-list">
+          <ul class="footer-list-item">
+            <li><p><em>© Since 2025</em> </p></li>
+            <li><p><em>All Rights Reserved.</em> </p></li>
+          </ul>
+        </div>
+      </section>
+    
+    </div>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top ↑</button>
+    <script src="./js/index.js"></script>
+  </body>
+</html>

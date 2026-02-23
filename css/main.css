@@ -1,0 +1,35 @@
+/*  Global styles (RESET, colors, typography, layout)================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Lato", sans-serif;
+ 
+}
+
+:root {
+  --primary-color: #afa9d9; /*  body color */
+  --secondary-color: #8082a6; /*  Aside color */
+  --nav-and-footer-color: #282e40; /*  Navbar and footer color */
+  --text-and-hover-color: #f2a172; /*  active page and hover color */
+
+  --body-bg-color: #afa9d9;
+  --body-bg-main-color: #828ab0;
+  --text-color-initial: #ffff;
+  --alt-hover-color: #f2bbc9;
+  --golden-color: #d4af37;
+  --text-body: grey;
+}
+html {
+
+  scroll-behavior: smooth;
+  background-image: url(../assets/images/cross-pages-background.png);
+  opacity: 1;
+  background-size: cover; /* Ensures the image covers the element */
+  background-position: center; /* Keeps the image centered */
+  background-repeat: no-repeat; /* Prevents tiling */
+}

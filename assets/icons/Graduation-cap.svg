@@ -1,0 +1,11 @@
+<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cap top -->
+  <path d="M12 3L2.5 8.2L12 13.4L21.5 8.2L12 3Z" stroke="#282e40" stroke-width="2" stroke-linejoin="round"></path>
+  
+  <!-- Cap base -->
+  <path d="M6.5 11V15.5C6.5 17 17.5 17 17.5 15.5V11" stroke="#282e40" stroke-width="2" stroke-linejoin="round"></path>
+  
+  <!-- Tassel -->
+  <path d="M21.5 8.2V14" stroke="#282e40" stroke-width="2" stroke-linecap="round"></path>
+  <circle cx="21.5" cy="15.8" r="0.8" fill="#282e40"></circle>
+</svg>

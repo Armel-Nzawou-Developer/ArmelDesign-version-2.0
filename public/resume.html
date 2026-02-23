@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ArmelDesign ★ | Resume</title>
+
+    <link rel="icon" type="image/x-icon" href="../assets/favicon/favicon.ico">
+
+    <!-- Global styles (RESET, colors, typography, layout) -->
+    <link rel="stylesheet" href="../css/main.css" />
+
+    <!-- Shared components for (header, nav, buttons and footer) -->
+    <link rel="stylesheet" href="../css/components.css" />
+
+    <style>
+
+      html{
+        list-style: none;
+      }
+
+  
+   
+    /* GRID container ==============*/
+    .grid-container {
+     display: grid;
+    grid-template-areas:
+    "navbar navbar"
+    "resume-title resume-title" 
+    "resume resume" 
+    "footer footer";
+  }
+
+
+      /* FLEXBOX resume-title ==============*/
+    .resume-title{
+        display: flex;
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+       padding: 15px 15px;
+        margin-top: 75px;  
+    }
+    .resume-title-item{
+        padding: 25px 15px;
+        text-align: center;
+    }
+    .resume-title-item > h1{
+      color: var(--text-color-initial);
+    }
+    /* .resume-title-item> p{
+      font-size: 18px;
+      color: var(--text-color-initial);
+    } */
+
+  /* FLEX resume ==============*/
+
+  .resume {
+   display: flex;
+  flex-direction: column;
+  place-items: center;
+  
+  box-shadow: 1px 0px 2px var(--text-body);
+
+}
+.resume-item{
+ display: flex;
+ flex-wrap: wrap;
+ place-content: center;
+ gap: 35px;
+ padding: 20px 25px;
+ margin: 25px 15px;
+ border-radius: 20px;
+ 
+  background-color: var( --text-color-initial);
+  max-width: 856px; 
+  width: 90%;
+  animation: fadeIn 2s ease-in-out;
+  box-shadow: 0px 10px 8px 0px var(--nav-and-footer-color);
+
+
+}
+ .resume-image > img{
+  margin: 5px;
+  height: 200px;
+  width: 200px ;
+  border-radius: 20px;
+ }
+ .resume-info > h1{
+  color: var( --nav-and-footer-color);
+ }
+ .resume-info > h2{
+ font-weight: 300;
+ color: var( --text-and-hover-color);
+ }
+ .resume-info > h3{
+  margin-top: 20px;
+  color: var( --nav-and-footer-color);
+
+ }
+ .resume-info > h4{
+  font-weight: 200;
+  margin-bottom: 10px;
+  color: var( --nav-and-footer-color);
+
+ }
+ .resume-info > p{ 
+  font-weight: 700;
+  color: var( --text-body);
+
+ }
+ .resume-contact-details > p {
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: var( --nav-and-footer-color);
+ }
+
+
+ /* continued ==============*/
+ .resume-item-2{
+ display: flex;
+ flex-direction: column;
+ flex-wrap: wrap;
+ justify-content: start;
+ gap: 25px;
+ padding: 20px 25px;
+ margin: 25px 15px;
+ border-radius: 20px;
+ 
+  background-color: var( --text-color-initial);
+  max-width: 856px;
+  width: 90%;
+  animation: fadeIn 2s ease-in-out;
+  box-shadow: 0px 10px 8px 0px var(--nav-and-footer-color);
+}
+
+.experience-header > h2{
+  margin-left: 15px;
+  font-weight: 600;
+ color: var(--nav-and-footer-color);
+}
+.experience-info{
+  display: flex;
+  justify-content: space-between;
+
+}
+.experience-title > h3{
+
+  font-weight: 500;
+  margin-left: 10px;
+  color: var(--nav-and-footer-color);
+}
+.experience-title > h4{
+  margin-left: 10px;
+  font-weight: 300;
+color: var( --text-and-hover-color);
+}
+.experience-time > p{
+ font-weight: 500;
+color: var(--nav-and-footer-color);
+}
+
+.experience-details li{
+  font-weight: 500;
+  color: var(--text-body);
+  margin-left: 15px;
+}
+
+  
+/* continued ==============*/
+
+.skills{
+        display: flex;
+        justify-content: start;
+        gap: 70px;
+      } 
+
+.software-knowledge img{
+        background-color:var(--body-bg-color);
+        height: 35px;
+        margin: 10px 10px;
+        border-radius: 50%;
+        box-shadow: 0 8px 20px var(--nav-and-footer-color);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        animation: fadeIn 2s ease-in-out;
+
+      }
+.software-knowledge img:hover{
+        transform: scale(1.3); /* zoom in on the icons */
+        box-shadow: 0 8px 20px var(--text-and-hover-color);
+      }
+
+.software-knowledge >h3{
+  margin-bottom: 5px;
+  font-weight: 700;
+  margin-left: 10px;
+  color: var(--nav-and-footer-color);
+}
+.software-knowledge >p{
+ margin-top: 10px;
+  margin-left: 10px;
+  color: var(--text-and-hover-color);
+}
+
+.personal-knowledge >h3{
+  margin-bottom: 5px;
+  font-weight: 700;
+  margin-left: 10px;
+  color: var(--nav-and-footer-color);
+}
+.personal-knowledge p{
+ margin-top: 10px;
+  margin-left: 10px;
+  color: var(--text-and-hover-color);
+}
+
+/* ================= CARDS REVEAL ================= */
+.card {
+  background: var(--text-color-initial);
+  padding: 35px 25px;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+ </head>
+
+  <body>
+    <!-- Section grid container -->
+    <div class="grid-container">
+
+      <!-- Section navbar -->
+      <section class=" grid-item navbar" style="grid-area: navbar;">
+        <div class="outter-nav">
+          <div class="outter-nav-item logo">
+            <a href="../index.html"><img src="../assets/images/logo.png" alt="logo"></a>
+          </div>
+        </div>
+
+        <!-- hamburger navigation -->
+        <div class="hamburger">
+           <input id="menu__toggle" type="checkbox" />
+           <label class="menu__btn" for="menu__toggle">
+             <span></span>
+           </label>
+        <div class="inner-nav">
+          <div class="inner-nav-item">
+            <li><a href="../index.html">Home</a></li>
+          </div>
+          <div class="inner-nav-item active-page">
+            <li><a href="./resume.html">Resume</a></li>
+          </div>
+          <div class="inner-nav-item">
+            <li><a href="./portfolio.html">Portfolio</a></li>
+          </div>
+          <div class="inner-nav-item">
+            <li><a href="./about.html">About</a></li>
+          </div>
+          <div class="inner-nav-item">
+            <li><a href="./pricing.html">Pricing</a></li>
+          </div>
+          <div class="inner-nav-item">
+            <li><a href="./contact.html">Contact</a></li>
+          </div>
+          <div class="inner-nav-item btn-tp-1">
+            <a target="_blank" href="https://wa.me/+27748368368?text=Hello%2C%20I%E2%80%99d%20like%20to%20discuss%20a%20website%20for%20my%20business.%0ABusiness%20name%3A%0AWebsite%20type%20%28corporate%2Fecommerce%2Fetc%29%3A%0ABudget%3A%0ATimeline%3A">
+            <button class="btn-flex"><img src="../assets/icons/whatsApp-top-icon.PNG" alt="whatsApp-top-icon"><p>Chat on WhatsApp</p></button></a>
+          </div>
+        </div>
+      </div>
+      </section>
+
+          <!-- Section resume-title -->
+      <section  class=" grid-item resume-title" style="grid-area: resume-title;">
+        <div class="resume-title-item ">
+            <h1>Resume ★</h1>
+        </div>
+      </section>
+
+      <!-- Section resume -->
+      <section  class=" grid-item resume" style="grid-area: resume;">
+        <div class="resume-item  ">
+          <div class="resume-image ">
+            <img src="../assets/icons/resume-icon.svg" alt="resume-icon">
+          </div>
+          <div class="resume-info">
+            <h1>Armel Nzawou</h1>
+            <h2>Web Developer </h2>
+            <h3>Freelance Web Developer</h3>
+            <h4>@ ArmelDesign★ </h4> 
+             <p>May 2023 - to Present</p>
+          </div>
+          <div class="resume-contact-details btn-tp-2">
+             <p class="footer-icons"> <img src="../assets/icons/email-icon.svg" alt="email-icon"/>armel.nzawou.developer@gmail.com</p>
+             <p class="footer-icons"><img src="../assets/icons/phone-icon.svg" alt="phone-icon"/> (+27) 74 – 836 – 8368</p>
+             <p class="footer-icons"><img src="../assets/icons/location-icon.svg" alt="location-icon"/>Cape Town, South Africa</p>
+            <a target="_blank" href="../resume/Armel-nzawou-CV-2026.pdf" download="Armel-nzawou-CV-2026.pdf"><button>Download resume ⬇</button></a>
+          </div>
+        </div>
+        <div class="resume-item-2 card ">
+          <div class="experience-header footer-icons">
+            <img src="../assets/icons/Experience-icon.svg" alt="Experience-icon">
+            <h2>Experience ★</h2>
+          </div>
+           <div class="experience-info card">
+               <div class="experience-title">
+                 <h3>Freelance Web Developer</h3>
+                 <h4>@ ArmelDesign★</h4>
+               </div>
+               <div class="experience-time">
+                  <p>May 2023 - to Present</p>
+               </div>
+           </div>
+           <div class="experience-details">
+            <ul>
+              <li>  Building clients websites</li>
+              <li>  Responsive design</li>
+              <li>  Fixing bugs that occur</li>
+              <li>  Improving SEO</li>
+              <li>  Deploying sites</li>
+            <ul>
+           </div>
+           <div class="experience-info card">
+               <div class="experience-title">
+                 <h3>Front-End Web Developer</h3>
+                 <h4>@ Craze Environmental (Pty) Ltd</h4>
+               </div>
+               <div class="experience-time">
+                  <p>July 2021 – April 2023 </p>
+               </div>
+           </div>
+           <div class="experience-details">
+            <ul>
+              <li> Collaborating with clients to shape the website’s look and feel,<br/> writing code with HTML, CSS, JSX, and React.js.</li>
+              <li>   Maintaining and updating websites and user interfaces.</li>
+            <ul>
+           </div>
+           <div class="experience-info card">
+               <div class="experience-title">
+                 <h3>Front-End Developer (Intern)</h3>
+                 <h4>@ Cape Peninsula University of Technology (CPUT)</h4>
+               </div>
+               <div class="experience-time">
+                  <p>July – Nov 2019 </p>
+               </div>
+           </div>
+           <div class="experience-details">
+            <ul>
+              <li>Producing tools that enhance the user’s website experience.</li>
+              <li>Ensuring websites are cross-platforms, including, Tablets, laptops, and smartphones</li>
+              <li>Fixing any website issues or bugs that occurs</li>
+            <ul>
+           </div>
+        </div>
+        <div class="resume-item-2   card">
+          <div class="experience-header footer-icons">
+            <img src="../assets/icons/Graduation-cap.svg" alt="Graduation-cap-icon">
+            <h2>Education ★</h2>
+          </div>
+           <div class="experience-info card">
+               <div class="experience-title">
+                 <h3>Advanced Diploma in ICT (Applications Development)</h3>
+                 <h4>Cape Peninsula University of Technology (CPUT) </h4>
+               </div>
+               <div class="experience-time">
+                  <p>Jan -  Dec 2023</p>
+               </div>
+           </div>
+           <div class="experience-info card">
+               <div class="experience-title">
+                 <h3> Diploma in ICT (Applications Development)</h3>
+                 <h4> Cape Peninsula University of Technology (CPUT)</h4>
+               </div>
+               <div class="experience-time">
+                  <p>2015 - 2019</p>
+               </div>
+           </div>
+
+          <div class="experience-header footer-icons">
+            <img src="../assets/icons/certification-icon.svg" alt="certification-icon">
+            <h2>Awards / Certifications ★</h2>
+          </div>
+           <div class="experience-info card">
+               <div class="experience-title">
+                 <h3> Cisco Certificate in IT Essentials: PC Hardware & Software</h3>
+                 <h4>Cape Peninsula University of Technology (CPUT)</h4>
+               </div>
+               <div class="experience-time">
+                  <p>May 2016</p>
+               </div>
+           </div>
+        </div>
+        <div class="resume-item-2  card ">
+          <div class="experience-header footer-icons">
+            <img src="../assets/icons/Skills-icon.svg" alt="Skills-icon">
+            <h2>Skills ★</h2>
+          </div>
+          <div class="skills">
+          <div class="software-knowledge ">
+            <h3> Software knowledge</h3>
+            <p>HTML5 & CSS3</p>                   
+            <img src="../assets/icons/html-css-icon.svg" alt="html-css-icon">
+            
+            <p>Javascript</p>
+            <img src="../assets/icons/javascript-icon.svg" alt="javascript-icon">
+            <p>React.js</p>
+            <img src="../assets/icons/react-icon.svg" alt="react-icon">
+            <p>Node.js</p>
+            <img src="../assets/icons/nodejs-icon.svg" alt="nodejs-icon">
+          </div>
+
+          <div class="personal-knowledge">
+            <h3>Personal knowledge</h3>
+            <div class="flex-icons"><img src="../assets/icons/british-icon.PNG" alt="british-icon"><p>Fluent ✓</p></div>
+            <div class="flex-icons"><img src="../assets/icons/french-icon.png" alt="french-icon"><p>Native ✓</p></div>
+            <div class="flex-icons"><img src="../assets/icons/spanish-icon.PNG" alt=""><p>Fluent ✓</p></div>
+          
+        
+          </div>
+        </div>
+        </div>
+      </section>
+
+
+      <!-- Section footer -->
+      <section class="grid-item footer component-gradient-background " style="grid-area: footer">
+        <div class="footer-list">
+            <ul class="footer-list-item">
+              <li><a class="logo-footer" href="../index.html"> <img src="../assets/images/logo-footer.png" alt="logo-footer"></a></li>
+            </ul>
+          </div>
+        <div class="footer-list">
+            <ul class="footer-list-item">
+              <li><h2>Menu ★</h2></li>
+              <li><a href="../index.html"> Home</a></li>
+              <li><a href="./resume.html"> Resume</a></li>
+              <li><a href="./portfolio.html"> Portfolio</a></li>
+              <li><a href="./pricing.html"> Pricing</a></li>
+              <li><a href="./contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-list">
+            <ul class="footer-list-item">
+              <li><h2>Quicks Links ★</h2></li>
+              <li><a href="./about.html"> About</a></li>
+              <li><a href="#">Make an appointment</a></li>
+              <li><a href="./pricing.html">Hire services</a></li>
+              <li><a href="../terms-and-conditions/Web_Developer_Services_EN.pdf"> Terms & Conditions</a></li>
+          
+            </ul>
+          </div>
+          <div class="footer-list">
+            <ul class="footer-list-item">
+              <li><h2> Get Social ★</h2></li>
+              <li class="footer-icons">
+                <a href="mailto:armel.nzawou.developer@gmail.com"><img src="../assets/icons/email-footer-icon.PNG" alt="email-footer-icon"/></a>
+                <a href="tel:+27748368368 "><img src="../assets/icons/phone-footer-icon.PNG" alt="phone-footer-icon"/></a>
+                <a target="_blank" href="https://www.facebook.com/armel.nzawou/"><img src="../assets/icons/facebook-footer-icon.png" alt="facebook-footer-icon"/></a>
+                <a target="_blank" href="https://www.instagram.com/armel_nzawou/"><img src="../assets/icons/instagram-footer-icon.png" alt="instagram-footer-icon"/></a>
+              </li>
+              <li class="footer-icons"><img src="../assets/icons/calendar-icon.PNG" alt="calendar-icon"/> <p>Mon - Fri , 09:00 – 18:00 (GMT+2) <br/> Sat , 09:00 – 15:00 (GMT+2)</p></li>
+            </ul>
+          </div>
+        <div class="footer-list">
+          <ul class="footer-list-item">
+            <li><p><em>© Since 2025</em> </p></li>
+            <li><p><em>All Rights Reserved.</em> </p></li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top ↑</button>
+    <script src="../js/index.js"></script>
+  </body>
+</html>
