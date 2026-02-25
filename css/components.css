@@ -35,14 +35,35 @@
   font-weight: 600;
 }
 
+/* Hover over effect to display bottom border  */
+.inner-nav-item li a { 
+  position: relative;
+ 
+}
+.inner-nav-item li a::after {
+  content: "";
+  height: 3px;
+  width: 0;
+  background: var(--text-and-hover-color);
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  transition: 0.3s;
+}
+.inner-nav-item li  a:hover::after {
+  width: 100%;
+  
+}
+/*END - Hover over effect to display bottom border   */
+
 .inner-nav-item img {
   height: 20px;
 }
 
 .active-page a {
   color: var(--text-and-hover-color);
-  padding: 10px 10px;
-  border-bottom: 3px solid var(--text-and-hover-color);
+  /* padding: 10px 10px; */
+  /* border-bottom: 3px solid var(--text-and-hover-color); */
 }
 
 /* BUTTONS ===================*/
