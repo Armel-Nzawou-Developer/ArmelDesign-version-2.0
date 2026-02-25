@@ -17,6 +17,7 @@
 .logo img {
   height: 40px;
   width: 220px;
+  animation: fadeDown 1s ease forwards;
 }
 .outter-nav {
   padding: 5px 5px;
@@ -297,6 +298,19 @@ em {
   }
 }
 
+
+/* keyframe for fadeUp or fadeDown Animations - across all website pages*/
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 /* MEDIA QUERY ===================*/
 
 @media (width <= 970px) {
@@ -324,8 +338,8 @@ em {
     visibility: visible;
     left: 0;
   }
-  /* fadIn styling for the navbar list items on smaller screen */
 
+  /* fadIn styling for the navbar list items on smaller screen */
   #menu__toggle:checked ~ .inner-nav li {
     animation: fadeIn 1s ease-in-out;
   }
@@ -390,7 +404,7 @@ em {
   /* Active page  */
   .active-page a {
     color: var(--text-and-hover-color);
-    border-bottom: none;
+    /* border-bottom: none; */
   }
 
   .logo-footer > img {
