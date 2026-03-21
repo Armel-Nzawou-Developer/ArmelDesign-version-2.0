@@ -37,9 +37,8 @@
 }
 
 /* Hover over effect to display bottom border  */
-.inner-nav-item li a { 
+.inner-nav-item li a {
   position: relative;
- 
 }
 .inner-nav-item li a::after {
   content: "";
@@ -51,9 +50,8 @@
   left: 0;
   transition: 0.3s;
 }
-.inner-nav-item li  a:hover::after {
+.inner-nav-item li a:hover::after {
   width: 100%;
-  
 }
 /*END - Hover over effect to display bottom border   */
 
@@ -116,6 +114,9 @@
   gap: 5px;
 }
 /* button back to top */
+#myBtn img {
+  height: 25px;
+}
 
 #myBtn {
   display: none;
@@ -123,13 +124,12 @@
   bottom: 20px;
   right: 20px;
   z-index: 99;
-  font-size: 18px;
   border: none;
   outline: none;
   background-color: var(--text-and-hover-color);
   color: var(--text-color-initial);
   cursor: pointer;
-  padding: 15px;
+  padding: 12px;
   border-radius: 4px;
   font-weight: 400;
   animation: fadeIn 1s ease-in-out;
@@ -271,7 +271,6 @@ em {
   left: -9999px; /* moves horizontal navbar off-screen */
 }
 
-
 /* KEYFRAMES ===================*/
 
 /* kyeframe for fadeIn Animation - across all website pages*/
@@ -298,17 +297,28 @@ em {
   }
 }
 
-
 /* keyframe for fadeUp or fadeDown Animations - across all website pages*/
 
 @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeDown {
-    from { opacity: 0; transform: translateY(-40px); }
-    to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* MEDIA QUERY ===================*/
